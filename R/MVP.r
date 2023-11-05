@@ -95,14 +95,17 @@ function(phe, geno, map, K=NULL, nPC.GLM=NULL, nPC.MLM=NULL, nPC.FarmCPU=NULL,
 ) {
 
     # Compatible with old ways
-    if (is.logical(file.output)) {
-        if (file.output == TRUE) {
-            file.output <- c("pmap", "pmap.signal", "plot", "log")
-        } else if (file.output == FALSE) {
-            file.output <- c()
+    # >>>>>>>>>>> GST modified >>>>>>>>
+    if(length(file.output) == 1){
+        if (is.logical(file.output)) {
+            if (file.output == TRUE) {
+                file.output <- c("pmap", "pmap.signal", "plot", "log")
+            } else if (file.output == FALSE) {
+                file.output <- c()
+            }
         }
     }
-
+    # <<<<<<<<<<<<< GST modified end <<<<<<<<<
     for(mt in method){
         if(!mt %in% c("GLM", "MLM", "FarmCPU"))
             stop("Unknow method: ", mt)
