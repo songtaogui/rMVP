@@ -71,14 +71,9 @@ Questions, suggestions, and bug reports are welcome and appreciated: [xiaoleiliu
 
 **WE STRONGLY RECOMMEND TO INSTALL MVP ON Microsoft R Open(https://mran.microsoft.com/download/)**  
 
-* The stable version: 
+* The modified version: 
 ```R
-install.packages("rMVP")
-```
-
-* The latest version: 
-```R
-devtools::install_github("xiaolei-lab/rMVP")
+devtools::install_github("songtaogui/rMVP")
 ```
 
 After installed successfully, **MVP** can be loaded by typing
